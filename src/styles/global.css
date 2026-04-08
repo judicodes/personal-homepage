@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Dark mode via .dark class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-light: #f5f4f1;
+  --color-bg-dark: #141412;
+  --color-text-light: #1a1916;
+  --color-text-dark: #e8e6e1;
+  --color-accent: #8b6f47;
+  --color-muted-light: #6b6760;
+  --color-muted-dark: #9b9790;
+
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-serif: 'Playfair Display', Georgia, serif;
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-family-sans);
+  background-color: #f5f4f1;
+  color: #1a1916;
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  background-color: #141412;
+  color: #e8e6e1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

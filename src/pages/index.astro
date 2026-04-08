@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import LowNoise from '../components/LowNoise.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Your Name — Technology & Product Consultant">
+  <Nav />
+  <main id="main-content">
+    <Hero />
+    <div class="border-t border-black/5 dark:border-white/5">
+      <About />
+    </div>
+    <div class="border-t border-black/5 dark:border-white/5">
+      <Services />
+    </div>
+    <LowNoise />
+  </main>
+  <Footer />
+</BaseLayout>
