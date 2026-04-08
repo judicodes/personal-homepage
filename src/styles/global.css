@@ -45,6 +45,19 @@ body {
   min-height: 100vh;
 }
 
+/* Scroll reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Focus styles for keyboard navigation */
 :focus-visible {
   outline: 2px solid var(--color-accent);

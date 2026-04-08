@@ -22,13 +22,13 @@ const services: Service[] = [
   {
     title: 'Public Speaking',
     description:
-      'I speak at tech conferences and community events about the messy, human reality of building a tech career — the doubt, the pivots, and the things you figure out the hard way. The stuff people are quietly googling at 2am.',
+      'I speak at tech conferences and community events about the messy, human reality of building a tech career — the doubt, the pivots, and the things you figure out the hard way. The stuff people are quietly googling at 2am. Want me to speak at your event? Drop me a line.',
     icon: 'M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z M19 10v2a7 7 0 0 1-14 0v-2 M12 19v3 M8 22h8',
   },
 ];
 ---
 
-<section id="services" class="py-16 sm:py-24">
+<section id="services" class="py-16 sm:py-24 reveal">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1a1916] dark:text-[#e8e6e1] mb-12">
       What I do
@@ -36,7 +36,7 @@ const services: Service[] = [
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       {services.map((service) => (
-        <article class="group rounded-2xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 p-6 hover:border-[#8b6f47]/30 dark:hover:border-[#8b6f47]/30 transition-colors duration-200">
+        <article class="group rounded-2xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 p-6 hover:border-[#8b6f47]/30 dark:hover:border-[#8b6f47]/30 hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200 motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none">
           <div class="mb-4 w-10 h-10 rounded-lg bg-[#8b6f47]/10 dark:bg-[#8b6f47]/15 flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

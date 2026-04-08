@@ -1,25 +1,14 @@
 ---
-// About section: bio + photo placeholder
+import { Image } from 'astro:assets';
+import photo from '../assets/judi1_square_small.jpeg';
 ---
 
-<section id="hello" class="py-16 sm:py-24">
+<section id="hello" class="py-16 sm:py-24 reveal">
   <div class="max-w-4xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
-
-      <!-- Photo placeholder -->
-      <div class="md:col-span-1 flex justify-center md:justify-start">
-        <div
-          class="w-48 h-48 md:w-full md:h-auto md:aspect-square rounded-2xl bg-[#8b6f47]/10 dark:bg-[#8b6f47]/15 flex items-center justify-center"
-          aria-hidden="true"
-        >
-          <span class="font-serif text-6xl font-bold text-[#8b6f47]/40 select-none">
-            J
-          </span>
-        </div>
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-center">
 
       <!-- Bio -->
-      <div class="md:col-span-2">
+      <div class="md:col-span-2 order-2 md:order-1">
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#1a1916] dark:text-[#e8e6e1] mb-6">
           Hello.
         </h2>
@@ -46,6 +35,17 @@
             I read, I speak, I write, I code.
           </p>
         </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="md:col-span-1 order-1 md:order-2 flex justify-center md:justify-end">
+        <Image
+          src={photo}
+          alt="Judith Böhlert"
+          width={600}
+          height={600}
+          class="w-48 h-48 md:w-full md:h-auto md:aspect-square rounded-2xl object-cover"
+        />
       </div>
 
     </div>
