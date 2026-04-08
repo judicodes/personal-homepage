@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Linea';
+  src: url('/fonts/Linea.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OnlyTrue';
+  src: url('/fonts/OnlyTrue-Neutral.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Dark mode via .dark class on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
