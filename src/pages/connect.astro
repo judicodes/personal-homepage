@@ -1,5 +1,7 @@
 ---
 import ConnectLayout from '../layouts/ConnectLayout.astro';
+import { Image } from 'astro:assets';
+import photo from '../assets/judi1_square_small.jpeg';
 ---
 
 <ConnectLayout title="Connect — Judith Boehlert" description="Ways to reach and follow Judith Boehlert">
@@ -7,12 +9,13 @@ import ConnectLayout from '../layouts/ConnectLayout.astro';
 
     <!-- Header -->
     <div class="text-center mb-10">
-      <div
-        class="w-16 h-16 rounded-full bg-[#8b6f47]/10 dark:bg-[#8b6f47]/15 flex items-center justify-center mx-auto mb-4"
-        aria-hidden="true"
-      >
-        <span class="font-serif text-2xl font-bold text-[#8b6f47]/60 select-none">J</span>
-      </div>
+      <Image
+        src={photo}
+        alt="Judith Boehlert"
+        width={128}
+        height={128}
+        class="w-16 h-16 rounded-full object-cover mx-auto mb-4"
+      />
       <h1 class="font-serif text-2xl font-bold text-[#1a1916] dark:text-[#e8e6e1]">
         Judith Boehlert
       </h1>
@@ -74,7 +77,38 @@ import ConnectLayout from '../layouts/ConnectLayout.astro';
             <rect width="20" height="16" x="2" y="4" rx="2"/>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
-          <span class="text-sm font-medium">Email</span>
+          <span class="text-sm font-medium">Email: hello@judithboehlert.com</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </a>
+
+      <!-- Main website -->
+      <a
+        href="/"
+        aria-label="Visit main website"
+        class="flex items-center justify-between w-full px-5 py-4 rounded-xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 text-[#1a1916] dark:text-[#e8e6e1] hover:border-[#8b6f47]/40 dark:hover:border-[#8b6f47]/40 hover:bg-[#8b6f47]/5 dark:hover:bg-[#8b6f47]/5 transition-colors duration-150 group"
+      >
+        <div class="flex items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-[#8b6f47]"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span class="text-sm font-medium">Website</span>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
           <path d="m9 18 6-6-6-6"/>
@@ -108,37 +142,6 @@ import ConnectLayout from '../layouts/ConnectLayout.astro';
           Coming soon
         </span>
       </div>
-
-      <!-- Main website -->
-      <a
-        href="/"
-        aria-label="Visit main website"
-        class="flex items-center justify-between w-full px-5 py-4 rounded-xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 text-[#1a1916] dark:text-[#e8e6e1] hover:border-[#8b6f47]/40 dark:hover:border-[#8b6f47]/40 hover:bg-[#8b6f47]/5 dark:hover:bg-[#8b6f47]/5 transition-colors duration-150 group"
-      >
-        <div class="flex items-center gap-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-[#8b6f47]"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-            <path d="M2 12h20"/>
-          </svg>
-          <span class="text-sm font-medium">Website</span>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
-          <path d="m9 18 6-6-6-6"/>
-        </svg>
-      </a>
 
     </nav>
   </main>
