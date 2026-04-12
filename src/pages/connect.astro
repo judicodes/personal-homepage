@@ -27,6 +27,39 @@ import photo from '../assets/judi1_square_small.jpeg';
     <!-- Link list -->
     <nav aria-label="Contact links" class="flex flex-col gap-3">
 
+      <!-- Low Noise newsletter -->
+      <a
+        href="https://lownoiseclub.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Low Noise Newsletter (opens in new tab)"
+        class="flex items-center justify-between w-full px-5 py-4 rounded-xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 text-[#1a1916] dark:text-[#e8e6e1] hover:border-[#8b6f47]/40 dark:hover:border-[#8b6f47]/40 hover:bg-[#8b6f47]/5 dark:hover:bg-[#8b6f47]/5 transition-colors duration-150 group"
+      >
+        <div class="flex items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-[#8b6f47]"
+            aria-hidden="true"
+          >
+            <path d="M4 11a9 9 0 0 1 9 9"/>
+            <path d="M4 4a16 16 0 0 1 16 16"/>
+            <circle cx="5" cy="19" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="text-sm font-medium">Low Noise Newsletter</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
+          <path d="M7 7h10v10M7 17 17 7"/>
+        </svg>
+      </a>
+
       <!-- LinkedIn -->
       <a
         href="https://www.linkedin.com/in/jboehlert/"
@@ -51,36 +84,6 @@ import photo from '../assets/judi1_square_small.jpeg';
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
           <path d="M7 7h10v10M7 17 17 7"/>
-        </svg>
-      </a>
-
-      <!-- Email -->
-      <a
-        href="mailto:hello@judithboehlert.com"
-        aria-label="Send an email to hello@judithboehlert.com"
-        class="flex items-center justify-between w-full px-5 py-4 rounded-xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 text-[#1a1916] dark:text-[#e8e6e1] hover:border-[#8b6f47]/40 dark:hover:border-[#8b6f47]/40 hover:bg-[#8b6f47]/5 dark:hover:bg-[#8b6f47]/5 transition-colors duration-150 group"
-      >
-        <div class="flex items-center gap-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-[#8b6f47]"
-            aria-hidden="true"
-          >
-            <rect width="20" height="16" x="2" y="4" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
-          <span class="text-sm font-medium">Email: hello@judithboehlert.com</span>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
-          <path d="m9 18 6-6-6-6"/>
         </svg>
       </a>
 
@@ -115,10 +118,11 @@ import photo from '../assets/judi1_square_small.jpeg';
         </svg>
       </a>
 
-      <!-- Low Noise newsletter (coming soon) -->
-      <div
-        class="flex items-center justify-between w-full px-5 py-4 rounded-xl border border-black/5 dark:border-white/5 bg-black/2 dark:bg-white/2 text-[#9b9790] dark:text-[#6b6760] cursor-not-allowed"
-        aria-label="Low Noise newsletter — coming soon"
+      <!-- Email -->
+      <a
+        href="mailto:hello@judithboehlert.com"
+        aria-label="Send an email to hello@judithboehlert.com"
+        class="flex items-center justify-between w-full px-5 py-4 rounded-xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 text-[#1a1916] dark:text-[#e8e6e1] hover:border-[#8b6f47]/40 dark:hover:border-[#8b6f47]/40 hover:bg-[#8b6f47]/5 dark:hover:bg-[#8b6f47]/5 transition-colors duration-150 group"
       >
         <div class="flex items-center gap-3">
           <svg
@@ -131,17 +135,18 @@ import photo from '../assets/judi1_square_small.jpeg';
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
+            class="text-[#8b6f47]"
             aria-hidden="true"
           >
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
-          <span class="text-sm font-medium">Low Noise</span>
+          <span class="text-sm font-medium">Email: hello@judithboehlert.com</span>
         </div>
-        <span class="text-xs px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/5 text-[#9b9790] dark:text-[#6b6760]">
-          Coming soon
-        </span>
-      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#9b9790] group-hover:text-[#8b6f47] transition-colors" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </a>
 
     </nav>
   </main>
