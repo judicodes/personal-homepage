@@ -20,29 +20,27 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-bg-light: #f5f4f1;
-  --color-bg-dark: #141412;
-  --color-text-light: #1a1916;
-  --color-text-dark: #e8e6e1;
-  --color-accent: #8b6f47;
-  --color-muted-light: #6b6760;
-  --color-muted-dark: #9b9790;
+  --color-cream:       #F5F4F1;
+  --color-ink:         #141412;
+  --color-cocoa:       #7E633C;
+  --color-stone-light: #6B6760;
+  --color-stone-dark:  #9B9790;
 
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-sans:  'Inter', system-ui, -apple-system, sans-serif;
   --font-family-serif: 'Playfair Display', Georgia, serif;
 }
 
 /* Base styles */
 html {
   font-family: var(--font-family-sans);
-  background-color: #f5f4f1;
-  color: #1a1916;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
   scroll-behavior: smooth;
 }
 
 html.dark {
-  background-color: #141412;
-  color: #e8e6e1;
+  background-color: var(--color-ink);
+  color: var(--color-cream);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -76,7 +74,7 @@ body {
 
 /* Focus styles for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-cocoa);
   outline-offset: 3px;
   border-radius: 2px;
 }
