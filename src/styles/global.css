@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Linea';
   src: url('/fonts/Linea.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -19,45 +19,78 @@
 /* Dark mode via .dark class on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* —— Raw palette — static, generates bg-cream / text-cocoa / text-honey etc. —— */
 @theme {
-  --color-cream:       #F5F4F1;
-  --color-ink:         #141412;
-  --color-cocoa:       #7E633C;
-  --color-stone-light: #6B6760;
-  --color-stone-dark:  #9B9790;
+  --color-cream:        #F5F4F1;
+  --color-ink:          #141412;
+  --color-cocoa:        #7E633C;
+  --color-cocoa-deep:   #6D5432;
+  --color-honey:        #B8915A;
+  --color-honey-deep:   #9E7D4E;
+  --color-stone-light:  #6B6760;
+  --color-stone-dark:   #9B9790;
 
-  --font-family-sans:  'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
-/* Base styles */
-html {
-  font-family: var(--font-family-sans);
-  background-color: var(--color-cream);
-  color: var(--color-ink);
-  scroll-behavior: smooth;
+/* —— Semantic roles — dynamic, flip per theme via .dark override —— */
+:root {
+  --surface:      #F5F4F1;
+  --fg:           #141412;
+  --fg-muted:     #6B6760;
+  --accent:       #7E633C;
+  --accent-hover: #6D5432;
+  --accent-on:    #F5F4F1;
+  --accent-tint:  rgba(126, 99, 60, 0.10);
+  --accent-ring:  rgba(126, 99, 60, 0.30);
+  --border-hair:  rgba(0, 0, 0, 0.05);
+  --border-soft:  rgba(0, 0, 0, 0.08);
+  --card-bg:      rgba(255, 255, 255, 0.50);
 }
 
 html.dark {
-  background-color: var(--color-ink);
-  color: var(--color-cream);
+  --surface:      #141412;
+  --fg:           #F5F4F1;
+  --fg-muted:     #9B9790;
+  --accent:       #B8915A;
+  --accent-hover: #9E7D4E;
+  --accent-on:    #141412;
+  --accent-tint:  rgba(184, 145, 90, 0.15);
+  --accent-ring:  rgba(184, 145, 90, 0.35);
+  --border-hair:  rgba(255, 255, 255, 0.06);
+  --border-soft:  rgba(255, 255, 255, 0.08);
+  --card-bg:      rgba(255, 255, 255, 0.03);
+}
+
+/* —— Expose semantic roles as Tailwind theme colors (dynamic via inline) —— */
+@theme inline {
+  --color-surface:      var(--surface);
+  --color-fg:           var(--fg);
+  --color-fg-muted:     var(--fg-muted);
+  --color-accent:       var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-on:    var(--accent-on);
+}
+
+/* —— Base —— */
+html {
+  font-family: var(--font-sans);
+  background-color: var(--surface);
+  color: var(--fg);
+  scroll-behavior: smooth;
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-body {
-  min-height: 100vh;
-}
+body { min-height: 100vh; }
 
 /* Scroll reveal */
 @media (prefers-reduced-motion: no-preference) {
@@ -72,9 +105,8 @@ body {
   }
 }
 
-/* Focus styles for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--color-cocoa);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
