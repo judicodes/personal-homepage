@@ -1,12 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import photo from '../assets/judi1_square_small.jpeg';
+import { Image } from "astro:assets";
+import photo from "../assets/judi1_square_small.jpeg";
 ---
 
 <section id="hello" class="py-16 sm:py-24 reveal">
   <div class="max-w-4xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-center">
-
       <!-- Bio -->
       <div class="md:col-span-2 order-2 md:order-1">
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-fg mb-6">
@@ -14,31 +13,32 @@ import photo from '../assets/judi1_square_small.jpeg';
         </h2>
         <div class="space-y-4 text-fg-muted leading-relaxed">
           <p>
-            I've been writing code since 2011 — long enough to have strong opinions,
-            short enough to still find it genuinely exciting. Since then I've built
-            full-stack web applications for startups and large organisations, earned an
-            MSc in Mathematics, and eventually went freelance, which is a polite way of
-            saying I opted out of the open-plan office.
+            I've been writing code since the year we sang along to Bruno Mars's
+            Grenade and Adele's Rolling in the Deep.<br />Since then I've built
+            full-stack web applications for startups and large organisations,
+            earned an MSc in Mathematics, and eventually went freelance, which
+            is a polite way of saying I opted out of the open-plan office.
           </p>
           <p>
-            These days I work as a freelance engineer and consultant, mostly in JavaScript
-            and TypeScript. I like early-stage work: the messy, exciting bit where things
-            are still taking shape.
+            These days I work as a freelance engineer and consultant, mostly in
+            JavaScript and TypeScript. I like early-stage work: the messy,
+            exciting bit where things are still taking shape.
           </p>
           <p>
-            I'm active in Berlin's tech community: organising meetups for freelancers,
-            speaking at events, and the occasional podcast appearance. The thread running
-            through all of it is the human side of tech — careers, community, and finding
-            a way of working that actually fits your life.
+            I'm active in Berlin's tech community: organising meetups for
+            freelancers, speaking at events, and the occasional podcast
+            appearance. The thread running through all of it is the human side
+            of tech - careers, community, and finding a calm way of working in
+            the chaotic tech industry.
           </p>
-          <p class="italic">
-            I read, I speak, I write, I code.
-          </p>
+          <p class="italic">I read, I speak, I write, I code.</p>
         </div>
       </div>
 
       <!-- Photo -->
-      <div class="md:col-span-1 order-1 md:order-2 flex justify-center md:justify-end">
+      <div
+        class="md:col-span-1 order-1 md:order-2 flex justify-center md:justify-end"
+      >
         <Image
           src={photo}
           alt="Judith Boehlert"
@@ -47,7 +47,6 @@ import photo from '../assets/judi1_square_small.jpeg';
           class="w-48 h-48 md:w-full md:h-auto md:aspect-square rounded-2xl object-cover"
         />
       </div>
-
     </div>
   </div>
 </section>
