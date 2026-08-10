@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
 import Analytics from '@vercel/analytics/astro';
+import ThemeScript from '../components/ThemeScript.astro';
+import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
 
 interface Props {
   title: string;
@@ -18,22 +21,17 @@ const { title, description = 'Software Engineer & Consultant' } = Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Prevent FOUC: apply dark class before first paint -->
-    <script is:inline>
-      (function () {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
+    <!--
+      Self-hosted, no runtime request to Google. Three variable files in total:
+      Inter (all weights), Playfair normal, Playfair italic. All three render
+      above the fold here (nav, body copy, hero tagline), so all are preloaded.
+      Filter by style, not weight: a variable file's preload entry carries only
+      its first weight, so a {weight: 700} filter would never match.
+    -->
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-playfair-display" preload />
+    <ThemeScript />
+    <ClientRouter />
     <Analytics />
   </head>
   <body class="bg-surface text-fg transition-colors duration-300">

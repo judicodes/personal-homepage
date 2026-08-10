@@ -15,7 +15,7 @@ Personal website built with [Astro](https://astro.build), [Tailwind CSS v4](http
 | ---------- | --------------------------------- |
 | `/`        | Main page — Hero, About, Services |
 | `/connect` | Standalone link-tree page         |
-| `/imprint` | Legal imprint (§ 5 TMG)           |
+| `/imprint` | Legal imprint (§ 5 DDG)           |
 
 ## Development
 

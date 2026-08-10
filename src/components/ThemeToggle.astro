@@ -1,5 +1,6 @@
 ---
-// ThemeToggle: reads localStorage and toggles .dark on <html>
+// ThemeToggle: markup only. The click handler lives in ThemeScript.astro,
+// which delegates from `document` so it survives view-transition swaps.
 ---
 
 <button
@@ -46,27 +47,3 @@
   </svg>
   </span>
 </button>
-
-<script>
-  const btn = document.getElementById('theme-toggle');
-
-  function applyTheme(dark: boolean) {
-    if (dark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }
-
-  btn?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    const inner = document.getElementById('theme-toggle-inner');
-    if (inner) {
-      inner.style.transform = 'rotate(180deg)';
-      setTimeout(() => { inner.style.transform = ''; }, 300);
-    }
-    applyTheme(!isDark);
-  });
-</script>

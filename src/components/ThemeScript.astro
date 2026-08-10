@@ -1,0 +1,56 @@
+---
+// Theme handling with no localStorage / sessionStorage.
+//
+// The OS setting (prefers-color-scheme) is the default. The toggle overrides it
+// in a plain in-memory variable, so the choice survives client-side navigation
+// (via <ClientRouter />) and resets on hard reload or in a new tab.
+//
+// Inline + in <head> so the class is on <html> before the first paint (no FOUC).
+// Astro preserves identical inline head scripts across swaps, so this runs once;
+// the __themeInit flag guards against a re-run regardless.
+---
+
+<script is:inline>
+  (function () {
+    if (window.__themeInit) return;
+    window.__themeInit = true;
+
+    // null = follow the OS, 'dark' / 'light' = user override for this visit
+    window.__themeOverride = null;
+
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const isDark = () =>
+      window.__themeOverride ? window.__themeOverride === 'dark' : media.matches;
+
+    const apply = () =>
+      document.documentElement.classList.toggle('dark', isDark());
+
+    apply();
+
+    media.addEventListener('change', () => {
+      if (!window.__themeOverride) apply();
+    });
+
+    // A view-transition swap replaces the <html> attributes, so re-apply.
+    document.addEventListener('astro:after-swap', apply);
+
+    // Delegated: a single listener keeps working after a swap replaces the button.
+    document.addEventListener('click', (event) => {
+      const btn =
+        event.target instanceof Element ? event.target.closest('#theme-toggle') : null;
+      if (!btn) return;
+
+      window.__themeOverride = isDark() ? 'light' : 'dark';
+      apply();
+
+      const inner = btn.querySelector('#theme-toggle-inner');
+      if (inner) {
+        inner.style.transform = 'rotate(180deg)';
+        setTimeout(() => {
+          inner.style.transform = '';
+        }, 300);
+      }
+    });
+  })();
+</script>

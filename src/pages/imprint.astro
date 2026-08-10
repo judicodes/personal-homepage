@@ -1,23 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout title="Impressum - Judith Boehlert" description="Legal information pursuant to § 5 TMG">
+<BaseLayout
+  title="Impressum - Judith Boehlert"
+  description="Legal information pursuant to § 5 DDG"
+>
   <Nav />
   <main id="main-content" class="max-w-4xl mx-auto px-6 py-16 sm:py-24">
-
     <h1 class="font-serif text-3xl sm:text-4xl font-bold text-fg mb-10">
       Impressum
     </h1>
 
-    <div class="prose prose-neutral max-w-2xl space-y-8 text-fg-muted leading-relaxed">
-
-      <!-- Angaben gemäß § 5 TMG -->
+    <div
+      class="prose prose-neutral max-w-2xl space-y-8 text-fg-muted leading-relaxed"
+    >
+      <!-- Angaben gemäß § 5 DDG -->
       <section>
         <h2 class="font-serif text-xl font-bold text-fg mb-3">
-          Angaben gemäß § 5 TMG
+          Angaben gemäß § 5 DDG
         </h2>
         <address class="not-italic space-y-1 text-sm">
           <p class="font-medium text-fg">Judith Boehlert</p>
@@ -29,9 +32,7 @@ import Footer from '../components/Footer.astro';
 
       <!-- Kontakt -->
       <section>
-        <h2 class="font-serif text-xl font-bold text-fg mb-3">
-          Kontakt
-        </h2>
+        <h2 class="font-serif text-xl font-bold text-fg mb-3">Kontakt</h2>
         <dl class="space-y-1 text-sm">
           <div class="flex gap-2">
             <dt class="font-medium text-fg min-w-16">E-Mail:</dt>
@@ -53,7 +54,8 @@ import Footer from '../components/Footer.astro';
           Umsatzsteuer-Identifikationsnummer
         </h2>
         <p class="text-sm">
-          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br
+          />
           <span class="font-medium text-fg">DE363938907</span>
         </p>
       </section>
@@ -61,7 +63,7 @@ import Footer from '../components/Footer.astro';
       <!-- Verantwortlich für den Inhalt -->
       <section>
         <h2 class="font-serif text-xl font-bold text-fg mb-3">
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+          Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
         </h2>
         <address class="not-italic space-y-1 text-sm">
           <p class="font-medium text-fg">Judith Boehlert</p>
@@ -76,54 +78,32 @@ import Footer from '../components/Footer.astro';
           Haftungsausschluss
         </h2>
 
-        <h3 class="font-medium text-fg mb-2 text-sm">
-          Haftung für Inhalte
-        </h3>
+        <h3 class="font-medium text-fg mb-2 text-sm">Haftung für Inhalte</h3>
         <p class="text-sm mb-4">
-          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-          nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
-          Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
-          Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte
+          auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
+          §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht
+          verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
+          überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
           Tätigkeit hinweisen.
         </p>
 
-        <h3 class="font-medium text-fg mb-2 text-sm">
-          Haftung für Links
-        </h3>
+        <h3 class="font-medium text-fg mb-2 text-sm">Haftung für Links</h3>
         <p class="text-sm mb-4">
-          Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-          Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
-          Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+          Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+          Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+          fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+          verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
           Seiten verantwortlich.
         </p>
 
-        <h3 class="font-medium text-fg mb-2 text-sm">
-          Urheberrecht
-        </h3>
+        <h3 class="font-medium text-fg mb-2 text-sm">Urheberrecht</h3>
         <p class="text-sm">
-          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
-          dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
-          der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen
-          Zustimmung des jeweiligen Autors bzw. Erstellers.
-        </p>
-      </section>
-
-      <!-- EU-Streitschlichtung -->
-      <section>
-        <h2 class="font-serif text-xl font-bold text-fg mb-3">
-          EU-Streitschlichtung
-        </h2>
-        <p class="text-sm">
-          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-          <a
-            href="https://ec.europa.eu/consumers/odr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline underline-offset-2 hover:text-accent transition-colors duration-150"
-          >
-            https://ec.europa.eu/consumers/odr/
-          </a>.<br />
-          Unsere E-Mail-Adresse finden Sie oben im Impressum.
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
+          Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+          Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des
+          jeweiligen Autors bzw. Erstellers.
         </p>
       </section>
 
@@ -133,29 +113,27 @@ import Footer from '../components/Footer.astro';
           Verbraucher&shy;streit&shy;beilegung
         </h2>
         <p class="text-sm">
-          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-          Verbraucherschlichtungsstelle teilzunehmen.
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+          vor einer Verbraucherschlichtungsstelle teilzunehmen.
         </p>
       </section>
 
       <!-- Colophon -->
       <section>
-        <h2 class="font-serif text-xl font-bold text-fg mb-3">
-          Colophon
-        </h2>
+        <h2 class="font-serif text-xl font-bold text-fg mb-3">Colophon</h2>
         <p class="text-sm">
-          Body text is set in Inter and Playfair Display. The display font is Linea, designed by
-          students at ESA (École Supérieure des Arts) as part of the
+          Body text is set in Inter and Playfair Display. The display font is
+          Linea, designed by students at ESA (École Supérieure des Arts) as part
+          of the
           <a
             href="https://typotheque.le75.be/"
             target="_blank"
             rel="noopener noreferrer"
             class="underline underline-offset-2 hover:text-accent transition-colors duration-150"
-          >typothèque de l'ESA le 75</a>,
-          under a GNU/GPL licence.
+            >typothèque de l'ESA le 75</a
+          >, under a GNU/GPL licence.
         </p>
       </section>
-
     </div>
 
     <div class="mt-12 pt-8 border-t border-black/5 dark:border-white/5">
@@ -163,13 +141,23 @@ import Footer from '../components/Footer.astro';
         href="/"
         class="text-sm text-fg-muted hover:text-accent dark:hover:text-accent transition-colors duration-150 inline-flex items-center gap-1"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m15 18-6-6 6-6"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m15 18-6-6 6-6"></path>
         </svg>
         Back to homepage
       </a>
     </div>
-
   </main>
   <Footer />
 </BaseLayout>

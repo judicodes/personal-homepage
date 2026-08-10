@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import ThemeScript from '../components/ThemeScript.astro';
+import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
 
 interface Props {
   title?: string;
@@ -17,22 +20,12 @@ const { title = 'Connect', description = 'Get in touch' } = Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Prevent FOUC: apply dark class before first paint -->
-    <script is:inline>
-      (function () {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
+    <!-- Self-hosted. This page renders no italic, so that file is declared but
+         not preloaded. -->
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-playfair-display" preload={[{ style: 'normal' }]} />
+    <ThemeScript />
+    <ClientRouter />
   </head>
   <body class="bg-surface text-fg transition-colors duration-200 min-h-screen flex flex-col items-center justify-center">
     <slot />
