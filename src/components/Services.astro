@@ -1,30 +1,41 @@
 ---
-// Services section: three tiles
+// Services section: four tiles. `description` holds one entry per paragraph,
+// since the leadership tile runs to two.
 interface Service {
   title: string;
-  description: string;
+  description: string[];
   icon: string; // inline SVG path data
 }
 
 const services: Service[] = [
   {
-    title: 'Software Engineering',
-    description:
-      'I build web applications from first prototype to production - mostly JavaScript and TypeScript, full-stack. I like the early stage: when the brief is still fuzzy, the architecture isn\'t set in stone, and moving fast matters. I\'m pragmatic and easy to bring into an existing team.',
-    icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z',
+    title: "Frontend Engineering & Architecture",
+    description: [
+      "I build web applications in React, TypeScript and Node.js, from first prototype to production. I make the architecture decisions and live with them, and I'm easy to bring into an existing team. Mostly frontend, comfortable across the stack when that's what the job needs."
+    ],
+    icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"
   },
   {
-    title: 'Consulting',
-    description:
-      'Sometimes you need an extra pair of hands. Sometimes you need someone to tell you honestly whether you\'re solving the right problem. I work with founders and technical leads on architecture, technology decisions, and the kind of questions that call for a considered outside perspective. No agenda, no jargon, no drama.',
-    icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z',
+    title: "Developer Experience",
+    description: [
+      "The part most teams put off. Design systems and component libraries, CI/CD pipelines, technical documentation, tooling. Usually it means taking things away rather than adding them: less friction, fewer detours, and shorter feedback loops for everyone else."
+    ],
+    icon: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
   },
   {
-    title: 'Public Speaking',
-    description:
-      'I speak at tech conferences and community events about the messy, human reality of building a tech career - the doubt, the pivots, and the things you figure out the hard way. The stuff people are quietly googling at 2am. Want me to speak at your event? Drop me a line.',
-    icon: 'M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z M19 10v2a7 7 0 0 1-14 0v-2 M12 19v3 M8 22h8',
+    title: "Technical Leadership",
+    description: [
+      "I often get hired to build and end up as the person translating between the engineers and the people who need to understand what the engineers just said. Architecture sparring, code review, mentoring, hiring and technical interviews, and an honest answer about whether you're solving the right problem. No agenda, no jargon, no drama."
+    ],
+    icon: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75"
   },
+  {
+    title: "Speaking & Writing",
+    description: [
+      "I speak at tech conferences and community events about the messy, human reality of building a tech career: the doubt, the pivots, and the things you figure out the hard way. The stuff people are quietly googling at 2am. Want me to speak at your event? Drop me a line."
+    ],
+    icon: "M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z M19 10v2a7 7 0 0 1-14 0v-2 M12 19v3 M8 22h8"
+  }
 ];
 ---
 
@@ -34,34 +45,38 @@ const services: Service[] = [
       What I do
     </h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      {services.map((service) => (
-        <article class="group rounded-2xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 p-6 hover:border-accent/30 hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200 motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none">
-          <div class="mb-4 w-10 h-10 rounded-lg bg-accent/10 dark:bg-accent/15 flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.75"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-accent"
-              aria-hidden="true"
-            >
-              <path d={service.icon} />
-            </svg>
-          </div>
-          <h3 class="font-serif text-xl font-bold text-fg mb-3">
-            {service.title}
-          </h3>
-          <p class="text-sm leading-relaxed text-fg-muted">
-            {service.description}
-          </p>
-        </article>
-      ))}
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {
+        services.map((service) => (
+          <article class="group rounded-2xl border border-black/8 dark:border-white/8 bg-white/50 dark:bg-white/3 p-6 hover:border-accent/30 hover:-translate-y-1 hover:shadow-md dark:hover:shadow-black/30 transition-all duration-200 motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none">
+            <div class="mb-4 w-10 h-10 rounded-lg bg-accent/10 dark:bg-accent/15 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-accent"
+                aria-hidden="true"
+              >
+                <path d={service.icon} />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-fg mb-3">
+              {service.title}
+            </h3>
+            <div class="space-y-3">
+              {service.description.map((paragraph) => (
+                <p class="text-sm leading-relaxed text-fg-muted">{paragraph}</p>
+              ))}
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>

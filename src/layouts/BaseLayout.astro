@@ -10,7 +10,12 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Software Engineer & Consultant' } = Astro.props;
+const {
+  title,
+  description = 'Freelance frontend tech lead in Berlin. React, TypeScript, architecture and developer experience for product teams.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -20,7 +25,18 @@ const { title, description = 'Software Engineer & Consultant' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <!--
       Self-hosted, no runtime request to Google. Three variable files in total:
       Inter (all weights), Playfair normal, Playfair italic. All three render
@@ -33,6 +49,8 @@ const { title, description = 'Software Engineer & Consultant' } = Astro.props;
     <ThemeScript />
     <ClientRouter />
     <Analytics />
+    <!-- Page-specific head tags, e.g. structured data. -->
+    <slot name="head" />
   </head>
   <body class="bg-surface text-fg transition-colors duration-300">
     <slot />

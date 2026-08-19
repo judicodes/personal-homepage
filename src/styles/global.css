@@ -1,17 +1,11 @@
 @import "tailwindcss";
 
+/* Upstream Linea has no dieresis, so "Böhlert" fell back mid-word. This build
+   adds U+00F6 from the font's own outlines; see tools/fonts/add-umlaut.py. */
 @font-face {
   font-family: 'Linea';
-  src: url('/fonts/Linea.otf') format('opentype');
+  src: url('/fonts/Linea-umlaut.woff2') format('woff2');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'OnlyTrue';
-  src: url('/fonts/OnlyTrue-Neutral.ttf') format('truetype');
-  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }

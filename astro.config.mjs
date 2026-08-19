@@ -2,6 +2,8 @@ import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  // Absolute URLs for canonical, Open Graph and JSON-LD tags.
+  site: 'https://judithboehlert.com',
   vite: {
     plugins: [tailwindcss()],
   },
